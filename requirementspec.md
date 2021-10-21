@@ -8,16 +8,17 @@
 ## 2.1 Functional Requirements
 - Map will show user how to get from two given locations using audio and visual effects
 - Map will be able to interpret language and answer questions like 'where is the car park from here'
-
-## 2.2 Non-Functional Requirements
 - Map must utilise AI to answer questions
-- Map should be accesable to all possible clients (Web app)
+## 2.2 Non-Functional Requirements
+
+- Map should be accessible to all possible clients (Web app)
 - Application must be portable (should be able to be ran on mobile devices)
 
 - Privacy
   - User location data wont be saved
 ## 2.3 Risks and Issues
-
+saving user location data
+possibly send user to wrong place if not robust
 # 3. Project Development (20% - Max 2 Pages)
 ## 3.1 Development Approach
 ## 3.2 Project Schedule
