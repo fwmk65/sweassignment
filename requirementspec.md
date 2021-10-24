@@ -14,7 +14,7 @@
 |Description|       |A description of example functional requirement|
 |Priority|          |High medium low|
 |Must Should Could| |Must should could|
-|Dependencies|      |e.g. FR1\
+|Dependencies|      |e.g. FR1|
 |Expected results|  |Example|
 |Exception handling| |Example|
 
