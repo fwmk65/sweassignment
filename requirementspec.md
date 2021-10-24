@@ -9,27 +9,14 @@
 - Map will show user how to get from two given locations using audio and visual effects
 - Map will be able to interpret language and answer questions like 'where is the car park from here'
 - Map must utilise AI to answer questions
-- | ID, type and title | FR 1.0 Use of visual effect to guide user between locations |
-  | Description        | The application will provied a GUI such that a user can easily understand                          
-                        where the map is guiding them.
-                                .Using arrows for direction
-                                .Using top down map view with highlighted path.|
-  | Priority           | High|
-  | Must should could  | Must have|
-  | Dependencies       | |
-  | Expected results   | The visual guide should be universal and understandable for a user of any language and intelligence|
-  | Exception handling |
-  
-  - | ID, type and title |FR 1.1 use of audio effect to guide user between locations.|
-  | Description        | The application will provide audio to guide user between locations.|
-  | Priority           | Medium|
-  | Must should could  | should|
-  | Dependencies       | FR 1.0|
-  | Expected results   | When a user has confirmed a route to travel on the application will
-                         provide audio queues such that the user can accurately travel between                              
-                         locations with only audio queue.|
-  | Exception handling ||
-  
+|Id Type and Title| |'Example'|
+|-----------------| |---------|
+|Description|       |A description of example functional requirement|
+|Priority|          |High medium low|
+|Must Should Could| |Must should could|
+|Dependencies|      |e.g. FR1\
+|Expected results|  |Example|
+|Exception handling| |Example|
 
 ## 2.2 Non-Functional Requirements
 
