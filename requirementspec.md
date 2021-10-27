@@ -9,14 +9,15 @@
 - Map will show user how to get from two given locations using audio and visual effects
 - Map will be able to interpret language and answer questions like 'where is the car park from here'
 - Map must utilise AI to answer questions
-|Id Type and Title| |'Example'|
-|-----------------| |---------|
-|Description|       |A description of example functional requirement|
-|Priority|          |High medium low|
-|Must Should Could| |Must should could|
-|Dependencies|      |e.g. FR1|
-|Expected results|  |Example|
-|Exception handling| |Example|
+
+|Id Type and Title|'Example'|
+|---|---|
+|Description       |A description of example functional requirement|
+|Priority          |High medium low|
+|Must Should Could |Must should could|
+|Dependencies      |e.g. FR1|
+|Expected results  |Example|
+|Exception handling |Example|
 
 ## 2.2 Non-Functional Requirements
 
