@@ -13,8 +13,8 @@
 |Id Type and Title|FR 1.0 Use of visual effect to guide user between locations|
 |---|---|
 |Description       |The application will provide a GUI such that a user can easily understand where the map is guiding them.
-                      - Using arrows for direction
-                      - Using top down map view with highlighted path|
+                    Using arrows for direction
+                    Using top down map view with highlighted path|
 
 |Priority          |High|
 |Must Should Could |Must have|
