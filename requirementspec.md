@@ -12,10 +12,7 @@
 
 |Id Type and Title|FR 1.0 Use of visual effect to guide user between locations|
 |---|---|
-|Description       |The application will provide a GUI such that a user can easily understand where the map is guiding them.
-                    Using arrows for direction
-                    Using top down map view with highlighted path|
-
+|Description       |The application will provide a GUI such that a user can easily understand where the map is                       guiding them.<br> -Using Arrows <br> -Using topdown map view highlighted path
 |Priority          |High|
 |Must Should Could |Must have|
 |Dependencies      |N/A|
@@ -28,8 +25,26 @@
 |Priority          |Medium|
 |Must Should Could |should|
 |Dependencies      |FR 1.0|
-|Expected results  |When a user has confirmed a route to travel on the application will provide audio queues such that the user can accurately travel between locations with                        only audio queue.|
+|Expected results  |When a user has confirmed a route to travel on the application will provide audio queues <br>                     such that the user can accurately travel between locations with only audio queue.|
 |Exception handling |Example|
+
+|Id Type and Title|FR 2 Use of AI to process user input|
+|---|---|
+|Description       |A user can use speech input to start a route e.g. take me to the car park. This will be <br>                     processed by an AI using natural language processing and then the route will be started.|
+|Priority          |High|
+|Must Should Could |Must|
+|Dependencies      |FR 3|
+|Expected results |When a user inputs speech to the application it will be processed quickly and the application <br> will provide a route relevant to the given audio input.|
+|Exception handling  |When a user provides irrelevant audio input e.g. what is the weather today the application  <br>                will warn user that input is invalid.<br><br>If the user requests a route to a building that doesn't exist e.g. "Where is the church" <br> the application will provide an output like cannot find building "church".|
+
+|Id Type and Title|FR 3 User inputting audio data|
+|---|---|
+|Description       |The user will be able to input speech as audio and the application will be able to pass this audio to AI.|
+|Priority          |High|
+|Must Should Could |Must|
+|Dependencies      |FR 1.0|
+|Expected results  |The application will be able to identify user audio input device and record audio when user <br> begins to request a route.|
+|Exception handling |User might not have microphone or broken microphone. Generate relevant error for user|
 ## 2.2 Non-Functional Requirements
 
 - Map should be accessible to all possible clients (Web app)
