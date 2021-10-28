@@ -45,16 +45,35 @@
 |Dependencies      |FR 1.0|
 |Expected results  |The application will be able to identify user audio input device and record audio when user <br> begins to request a route.|
 |Exception handling |User might not have microphone or broken microphone. Generate relevant error for user|
+
+|Id Type and Title|FR 4 Admin editing locations.|
+|---|---|
+|Description       |Using a GUI an admin should be able to edit locations including the name, location, function.|
+|Priority          |High|
+|Must Should Could |Must|
+|Dependencies      |N/A|
+|Expected results  |An admin should be able to access a separate section where they have access to the map data. <br>They should be able to edit it including location, function and names of rooms, as well as information about walkways between rooms.|
+|Exception handling |Timeouts would have to be handled gracefully i.e. letting the admin know the task wasn't successful. <br>Authentication for the admin|
 ## 2.2 Non-Functional Requirements
 
 - Map should be accessible to all possible clients (Web app)
+
 - Application must be portable (should be able to be ran on mobile devices)
 
 - Privacy
   - User location data wont be saved
+
+- Information and directions should not be vague so as to not send users to the wrong location
 ## 2.3 Risks and Issues
-saving user location data
-possibly send user to wrong place if not robust
+- Storing data on the user could possibly violate GDPR
+  - Make data Handling GDPR compliant
+
+- Make sure database is robust as the whole systen relies on it
+  - Use regular backups in case of any error
+
+- Misuse of the admin section could result in many issues e.g. incorrect locations or inappropriate names being shown to users.
+  - Make access to admin section robust e.g. 2FA
+
 # 3. Project Development (20% - Max 2 Pages)
 ## 3.1 Development Approach
 ## 3.2 Project Schedule
