@@ -55,6 +55,18 @@
 |Expected results  |An admin should be able to access a separate section where they have access to the map data. <br>They should be able to edit it including location, function and names of rooms, as well as information about walkways between rooms.|
 |Exception handling |Timeouts would have to be handled gracefully i.e. letting the admin know the task wasn't successful. <br>Authentication for the admin|
 ## 2.2 Non-Functional Requirements
+|Type and Title        |Security Requirement Handling of user location data |
+|---|| 
+|Metrics      |Data flow diagrams in design stage to ensure data is treated correctly |
+|Security     |The application will never permanantly save user location data |
+|Constraints  |Follow GDPR compliance | 
+
+|Type and Title        |Availability Requirement |
+|---|| 
+|Metrics      |Application will be available on IOS, Android and as a web app   | 
+|Security     |? |
+|Constraints  |Use of react native in development to ease multiplatform portability| 
+
 
 - Map should be accessible to all possible clients (Web app)
 
