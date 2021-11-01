@@ -46,17 +46,48 @@
 |Expected results  |The application will be able to identify user audio input device and record audio when user <br> begins to request a route.|
 |Exception handling |User might not have microphone or broken microphone. Generate relevant error for user|
 
-|Id Type and Title|FR 4 Admin editing locations.|
+|Id Type and Title|FR 4.0 Allow for system admin login |
+|---|---|
+|Description       |The application must have a feature for a system admin to login via username and password|
+|Priority          |High|
+|Must Should Could |Must|
+|Dependencies      |N/A|
+|Expected results  |The application must have a seperate area for system admin users to login. <br> This area must be only accessed by system admins and therefore should be protected <br> by a username and password system.|
+|Exception handling ||
+
+|Id Type and Title|FR 4.1 Admin login Security |
+|---|---|
+|Description       |The application will have securities in place to avoid a non admin user accessing the admin account.|
+|Priority          |High|
+|Must Should Could |Should|
+|Dependencies      |FR 4.0|
+|Expected results  |The Admin login system should have securities such as locking login attempts after too many incorrect attempts.<br>|
+|Exception handling |Its possible for the real system admin to get the password wrong a few times. <br>So a system in place to unlock the admin login will have to be put in place|
+
+|Id Type and Title|FR 5 Admin editing locations.|
 |---|---|
 |Description       |Using a GUI an admin should be able to edit locations including the name, location, function.|
 |Priority          |High|
 |Must Should Could |Must|
-|Dependencies      |N/A|
+|Dependencies      |FR 4|
 |Expected results  |An admin should be able to access a separate section where they have access to the map data. <br>They should be able to edit it including location, function and names of rooms, as well as information about walkways between rooms.|
 |Exception handling |Timeouts would have to be handled gracefully i.e. letting the admin know the task wasn't successful. <br>Authentication for the admin|
+
+
+|Id Type and Title|FR6 System must function without the need for user account or additional user information|
+|---|---|
+|Description       |The application needs to be accessible to as many people as possible with ease.<br> Removing the need for a user account or providing more information e.g. email address encourages this idea.|
+|Priority          |Medium|
+|Must Should Could |should|
+|Dependencies      |N/A|
+|Expected results  |When the user starts the application it will be fully functional <br> without need for a user to create an account or provide more information.|
+|Exception handling |N/A|
+
+
+
 ## 2.2 Non-Functional Requirements
 
-|Type and Title        |Security Requirement Handling of user location data |
+|Type and Title        |Security Requirement Handling of user location data|
 |---|| 
 |Metrics      |Data flow diagrams in design stage to ensure data is treated correctly |
 |Security     |The application will never permanantly save user location data |
