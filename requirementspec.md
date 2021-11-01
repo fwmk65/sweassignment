@@ -87,17 +87,30 @@
 
 ## 2.2 Non-Functional Requirements
 
-|Type and Title        |Security Requirement Handling of user location data|
-|---|| 
-|Metrics      |Data flow diagrams in design stage to ensure data is treated correctly |
-|Security     |The application will never permanantly save user location data |
-|Constraints  |Follow GDPR compliance | 
+|Type and Title|Availability Requirement Platform availability|
+|---|---|
+|Metrics       | Application will be available on IOS, Android and as a web app|
+|Security      | N/A|
+|Constraints   | Use of react native in development to ease multiplatform portability|
 
-|Type and Title        |Availability Requirement |
-|---|| 
-|Metrics      |Application will be available on IOS, Android and as a web app   | 
-|Security     |? |
-|Constraints  |Use of react native in development to ease multiplatform portability| 
+|Type and Title|Security Requirement Handling of user location data|
+|---|---|
+|Metrics       | Data flow diagrams in design stage to ensure data is treated correctly|
+|Security      | The application will never permanantly save user location data|
+|Constraints   | Follow GDPR compliance|
+
+
+|Type and Title|Peformance Requirement Loading Intelligent map speeds|
+|---|---|
+|Metrics       | The map should have an average load time under 3 seconds <br>across a range of different hardware|
+|Security      | Use of polynomial time algorithms when implementing map system|
+|Constraints   | N/A|
+
+|Type and Title|System should be able to handle a large amount of users at once|
+|---|---|
+|Metrics       |The application should keep fast loading times with more then <br>200 concurrent users |
+|Security      |Minimise the amount of computation on the backend of<br> the application |
+|Constraints   | N/A |
 
 
 - Map should be accessible to all possible clients (Web app)
