@@ -1,4 +1,0 @@
-#Sheet
-
-##Question ideas
--
