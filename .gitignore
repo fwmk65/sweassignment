@@ -1,1 +1,3 @@
 project/api/*.db
+project/api/__pycache__
+project/api/env
