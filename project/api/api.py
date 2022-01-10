@@ -31,23 +31,35 @@ def search(start, end):
     Database query 
     """
     # TODO Add code to get the path rather than the list of distances
-    graph = QueryDatabase("project/api/toy.db")
+    graph = QueryDatabase("./api/toy.db")
+    for node in graph:
+        print(node)
     visited = set()
     distances = [float("inf") for i in graph]
     distances[start] = 0
     current = start
     prev = [None for i in graph]
-    while end not in visited:
+    while end != current:
+        i = float("inf")
+        pos = 0
+        for position, distance in enumerate(distances):
+            if distance < i and position not in visited:
+                i = distance
+                pos = position
+            elif distance == i and position not in visited:
+                i = distance
+                pos = position
+
+        current = pos
         visited.add(current)
         for v, node in enumerate(graph[current]):
             if node != "-":
                 new_dist = distances[current] + node
                 if new_dist < distances[v]:
                     distances[v] = new_dist
-        current = distances.index(
-            min(filter(lambda x: x not in visited, distances)))
+                    prev[v] = current
 
-    return distances
+    return distances, prev
 # @app.route("/")
 
 
