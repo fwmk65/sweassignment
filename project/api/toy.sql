@@ -1,3 +1,4 @@
+-- TODO: remove this file after unit testing is complete, or in final production
 -- Just some toy data so that we can get pathfinding done without
 -- Having to have the real database yet
 -- The Graph looks like:
