@@ -1,8 +1,36 @@
+import json
+import re
 import sqlite3
 from flask import Flask
+from ibm_watson import SpeechToTextV1
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
+
 
 app = Flask(__name__)
+
+# IBM Cloud Setup
+
+# Setting Credentials
+# I have stored these credentials in a file called credentials.json
+# Keys are the same as the variable names
+try:
+    with open("credentials.json", "r") as file:
+        data = json.loads(file.read())
+        API_KEY = data["API_KEY"]
+        STT_URL = data["STT_URL"]
+except FileNotFoundError:
+    API_KEY = input("Enter your API key: ")
+    STT_URL = input("Enter the URL to Watson Speech To Text: ")
+
+print(f"API key: {API_KEY} - STT_URL: {STT_URL}")
+
 DATABASE_PATH = "./toy.db"
+
+authenticator = IAMAuthenticator(API_KEY)
+speech_to_text = SpeechToTextV1(
+    authenticator=authenticator
+)
+speech_to_text.set_service_url(STT_URL)
 
 
 def query_database(path):
@@ -75,12 +103,31 @@ def generate_path(start, end, prev):
     return path
 
 
+def audio_request():
+    # TODO change this to take audio binary from request object
+    with open("audio-file.flac", "rb") as audio_file:
+        speech_recognition_results = speech_to_text.recognize(
+            audio=audio_file,
+            content_type="audio/flac",
+        ).get_result()
+    transcript = speech_recognition_results["results"][0]["alternatives"][0]["transcript"]
+    transcript_regex = re.compile(r"from (\w|\s)+ to (\w|\s)+")
+    places = transcript_regex.group()
+    if places == None:
+        return 400
+    else:
+        start = places[5:places.index(" to")]
+        end = places[places.index(" to") + 3]
+        return [start, end]
+
+
 def home_page():
     # TODO return the home page here
     ...
 
 
 if __name__ == "__main__":
+    print("---Basic Dijkstra's tests---")
     dist, prev = search(0, 4)
     print(generate_path(0, 4, prev))
     dist, prev = search(1, 4)
