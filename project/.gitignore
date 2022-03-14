@@ -25,3 +25,5 @@ yarn-error.log*
 # Python API
 api/__pycache__
 api/env
+api/credentials.json
+api/audio-file.flac
