@@ -291,5 +291,5 @@ VALUES(
 
 INSERT INTO Rooms
 VALUES(
-                57, "x-ray", 1, "4540,16,38,2"
+                57, "x-ray", 1, "45,40,16,38,2"
 );

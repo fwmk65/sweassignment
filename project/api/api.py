@@ -1,3 +1,8 @@
+# API for DRI Intelligent map
+# NOTE: The map given as reference uses 1-based indexing to index the rooms
+#       however when dealing with the adjacency matrix and generated paths,
+#       0-based indexing will be used. The database for the project still
+#       uses this 1-based indexing.
 import json
 import re
 import sqlite3
@@ -24,7 +29,7 @@ except FileNotFoundError:
 
 print(f"API key: {API_KEY} - STT_URL: {STT_URL}")
 
-DATABASE_PATH = "./toy.db"
+DATABASE_PATH = "./hospital.db"
 
 authenticator = IAMAuthenticator(API_KEY)
 speech_to_text = SpeechToTextV1(
@@ -36,20 +41,22 @@ speech_to_text.set_service_url(STT_URL)
 def query_database(path):
     """
     Function to query the database and return adjacency matrix of graph
+    Important note: The map given as a reference uses 1 based indexing,
+                    however throughout this program, the distance matrix
+                    and generated paths will use 0 based indexing
     """
-    # TODO This function will not generalise well, Add queries to find largest
-    # room number and use that instead of magic numbers
-    # TODO also if room number >= 10, char.isnumeric() won't pick it up. Use regexs?
-    # TODO make adjacent comma separated so you can call adjacent.split(",") later
+    # TODO If you really wanted to, you can automate the finding of how many
+    # rooms there are, but a hospital probably won't just get new rooms
     matrix = []
     db = sqlite3.connect(path)
-    cursor = db.execute("SELECT roomID, adjacent FROM rooms;")
+    cursor = db.execute("SELECT ID, Adjacent FROM Rooms WHERE Accessible = 1;")
     i = 0
     for row in cursor:
-        matrix.append(["-" for i in range(5)])  # TODO remove this magic number
-        for char in row[1]:
-            if char.isnumeric():
-                matrix[i][int(char) - 1] = 1
+        # 57 is the number of rooms in the hospital
+        matrix.append(["-" for j in range(57)])
+        rooms = row[1].split(",")
+        for room in rooms:
+            matrix[i][int(room) - 1] = 1
         i += 1
     db.close()
     return matrix
@@ -128,7 +135,7 @@ def home_page():
 
 if __name__ == "__main__":
     print("---Basic Dijkstra's tests---")
-    dist, prev = search(0, 4)
-    print(generate_path(0, 4, prev))
-    dist, prev = search(1, 4)
-    print(generate_path(1, 4, prev))
+    dist, prev = search(25, 55)
+    print(generate_path(25, 55, prev))
+    #dist, prev = search(1, 4)
+    #print(generate_path(1, 4, prev))
